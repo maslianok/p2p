@@ -1,0 +1,17 @@
+doctype 5
+html
+  head
+    title Отправитель :: Отправка файла без сохранения на сервер.
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    #uploadbox
+      h2 Отправить файл:
+      span#uploadarea
+        label(for="filebox") Выберите файл:
+        input#filebox(type="file")
+        br
+        button#uploadbutton.btn(type='button') Отправить
+
+    script(src='//code.jquery.com/jquery-1.9.1.min.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/script.js')

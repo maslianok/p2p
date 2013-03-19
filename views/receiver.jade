@@ -1,0 +1,12 @@
+doctype 5
+html
+  head
+    title Получатель :: Отправка файла без сохранения на сервер.
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    #uploadbox
+      if (name)
+        h2 Получение файла:
+        a(href='/file/get/#{token}') Загрузить файл !{name}
+      else
+        h2 Файл не найден...
