@@ -71,12 +71,12 @@ function v3(arr) {
       freq[v] = freq.hasOwnProperty(v)?freq[v]+1:1;
   });
     
-    //А поиск по паттерну быстрее алгоритма с преобразованиями ASCII кода
+  //А поиск по паттерну быстрее алгоритма с преобразованиями ASCII кода
   Object.keys(freq).sort(function(a,b){return freq[b]-freq[a];}).forEach(function(v,i){
       hash[v] = Array.prototype.map.call((i+1).toString(26), function(e){return pattern[e];}).join('');
   });
    
-    return hash;
+  return hash;
 }
 
 //v4
@@ -97,7 +97,7 @@ function v4(arr) {
   i = s_arr.length;
   while (i--) hash[s_arr[i]] = map.call((i+1).toString(26), function(el){return pattern[el];}).join('');
 
-    return hash;
+  return hash;
 }
 
 var classes = ['link', 'block', 'hide', 'link', 'menu', 'block', 'content', 'link', 'footer', 'img', 'img', 'link', 'modal', 'button', 'form', 'input', 'button', 'input', 'link', 'toString', 'valueOf', 'button']
