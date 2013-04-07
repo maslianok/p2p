@@ -111,7 +111,7 @@ Number.prototype.toStr = function(base){
   var nN="",i=~~this,r;
   while(true){
     r=i%base;
-    nN="0123456789abcdefghijklmnopqrstuvwxyz".charAt(r+10)+nN;
+    nN="abcdefghijklmnopqrstuvwxyz".charAt(r)+nN;
     i=(i-r)/base;
     if(0==i--)break;
   }
