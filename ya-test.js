@@ -107,7 +107,7 @@ function v4(arr) {
 Данное поведение нормально для систем счисления (за 9 идет 10, а не 00), но не нормально для нашего задания.
 К тому же, очень затратно вызывать toString->map->pattern->join. Это самое узкое место функции.
 */
-Number.prototype.toStr = function(base){
+Number.prototype.toStr = function(){
   var nN="",i=this,r;
   while(true){
     r=i%26;
