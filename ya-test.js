@@ -126,7 +126,7 @@ function v5(arr) {
   s_arr = Object.keys(freq).sort(function(a,b){return freq[b]-freq[a];});
 
   i = s_arr.length;
-  while (i--) hash[s_arr[i]] = i.toStr(26);
+  while (i--) hash[s_arr[i]] = i.toStr();
 
   return hash;
 }
