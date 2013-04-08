@@ -111,7 +111,7 @@ Number.prototype.toStr = function(){
   var nN="",i=this,r;
   while(true){
     r=i%26;
-    nN="abcdefghijklmnopqrstuvwxyz".charAt(r)+nN;
+    nN=s.charAt(r)+nN;
     i=(i-r)/26;
     if(0==i--)break;
   }
@@ -132,6 +132,7 @@ function v5(arr) {
 }
 
 var classes = ['link', 'block', 'hide', 'link', 'menu', 'block', 'content', 'link', 'footer', 'img', 'img', 'link', 'modal', 'button', 'form', 'input', 'button', 'input', 'link', 'toString', 'valueOf', 'button']
+  , s = 'abcdefghijklmnopqrstuvwxyz'
   , pattern = {0:'a',1:'b',2:'c',3:'d',4:'e',5:'f',6:'g',7:'h',8:'i',9:'j',a:'k',b:'l',c:'m',d:'n',e:'o',f:'p',g:'q',h:'r',i:'s',j:'t',k:'u',l:'v',m:'w',n:'x',o:'y',p:'z'}
   , hasOwn = Object.prototype.hasOwnProperty
   , map = Array.prototype.map;
