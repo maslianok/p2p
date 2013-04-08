@@ -108,11 +108,11 @@ function v4(arr) {
 К тому же, очень затратно вызывать toString->map->pattern->join. Это самое узкое место функции.
 */
 Number.prototype.toStr = function(base){
-  var nN="",i=~~this,r;
+  var nN="",i=this,r;
   while(true){
-    r=i%base;
+    r=i%26;
     nN="abcdefghijklmnopqrstuvwxyz".charAt(r)+nN;
-    i=(i-r)/base;
+    i=(i-r)/26;
     if(0==i--)break;
   }
   return nN;
