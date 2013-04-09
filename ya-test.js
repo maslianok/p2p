@@ -157,15 +157,8 @@ var classes = ['link', 'block', 'hide', 'link', 'menu', 'block', 'content', 'lin
   , hasOwn = Object.prototype.hasOwnProperty
   , map = Array.prototype.map;
 
-//пример работы последней версии v5 http://jsfiddle.net/Vqq8L/1/
+//пример работы последней версии v6 http://jsfiddle.net/Vqq8L/4/
 
-//Процесс решения и оптимизации (содержит 5 версий функции с подробным комментированием): https://github.com/maslianok/p2p/blob/master/ya-test.js
+//Процесс решения и оптимизации (содержит 6 версий функции с подробным комментированием): https://github.com/maslianok/p2p/blob/master/ya-test.js
 
-//Тесты: http://jsperf.com/ya-test/3
-//В браузерах Firefox и Opera v5 работает в 2 раза быстрее
-//Немного неожиданные результаты показал Chrome, там v4 работает в 2 раза быстрее.
-//Предполагаю, что это возможно из-за некой супер-оптимизации методов по умолчанию (map,join,toString) или, наоборот, медленной обработки кастомных методов.
-//Тут нужно дополнительно разбираться, если есть необходимость - могу покопать в этом направлении.
-
-
-
+//Тесты: http://jsperf.com/ya-test/4
