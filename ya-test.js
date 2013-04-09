@@ -120,14 +120,34 @@ Number.prototype.toStr = function(){
 
 function v5(arr) {
   var freq = {}, hash = {}, s_arr = [], i = arr.length, e;
-
   while (i--) {e = arr[i];freq[e] = hasOwn.call(freq,e)?freq[e]+1:1;}
-
   s_arr = Object.keys(freq).sort(function(a,b){return freq[b]-freq[a];});
 
   i = s_arr.length;
   while (i--) hash[s_arr[i]] = i.toStr();
 
+  return hash;
+}
+
+//v6
+/*
+Оптимизация:
+Меня осенило - зачем каждый раз вычислять сокращенное значение?! Массив у нас отсортирован и нам нужно лишь инкрементировать очередное значение по определенным условиям.
+Отказываемся от метода toStr и пишем новую функцию convert: 
+  -если строка пустая, то вернуть 'a'
+  -если последний символ не z, то изменить его на следующий по алфавиту и вернуть новую строку
+  -если z, то заменить его на a, для остальной части строки вызвать convert
+*/
+function convert(str) {
+    if (!str.length) return 'a'
+    else if (str.slice(-1)=='z') return convert(str.slice(0,-1))+'a'
+    else return str.slice(0,-1)+s.charAt(s.indexOf(str.slice(-1))+1)
+}
+function v6(arr) {
+  var freq = {}, hash = {}, s_arr = [], i = arr.length, s_tmp='', e, max;
+  while (i--) {e = arr[i];freq[e] = hasOwn.call(freq,e)?freq[e]+1:1;}
+  s_arr = Object.keys(freq).sort(function(a,b){return freq[b]-freq[a];});
+  for (i=0,max=s_arr.length; i<max; i++) hash[s_arr[i]] = s_tmp = convert(s_tmp);
   return hash;
 }
 
